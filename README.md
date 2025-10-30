@@ -1,6 +1,6 @@
 # AQA_Rapp
 
-Recreaion of a GUI visualizing a healing process for different types of patients.
+Recreation of a GUI visualizing a healing process for different types of patients.
 
 ## Executable
 A zip file exe "exe_file.zip" is provided. After unpacking the zip archive, the file appAQA_Rapp_GUI.exe can be executed within the directory to run the application.
