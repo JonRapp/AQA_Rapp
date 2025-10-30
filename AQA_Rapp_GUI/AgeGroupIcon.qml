@@ -7,7 +7,7 @@ Rectangle {
     required property color backgroundColor
     required property color iconColor
 
-    color: backroundColor
+    color: backgroundColor
     width: 100
     height: 150
     Timer {

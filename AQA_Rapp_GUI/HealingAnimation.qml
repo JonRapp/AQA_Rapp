@@ -7,7 +7,7 @@ Rectangle {
     required property color backgroundColor
     required property color iconColor
 
-    color: backroundColor
+    color: backgroundColor
 
     width: 300
     height: 300
