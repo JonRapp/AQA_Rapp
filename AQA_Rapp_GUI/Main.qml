@@ -11,6 +11,7 @@ Window {
     property color mainBackgroundColor: "#FFFFFF"
     property color mainIconColor: "#696969"
     property bool isDarkMode: false // rather with state?
+    property bool isHealing: false
 
     color: mainBackgroundColor
 
@@ -46,6 +47,8 @@ Window {
         anchors.top: controlLayout.bottom
         buttonBackgroundColor: mainBackgroundColor
         buttonIconColor: mainIconColor
+        healingSource: "qrc:/icons/pics/lungs.svg"
+        healingIconColor: "gray"
         state: "normal"
     }
     LabelIconButton {
@@ -58,10 +61,26 @@ Window {
         labelText: "Start healing"
         state: "normal"
         onClicked: {
-            patientLayout.state = "healing"
-            healingButton.state = "healing"  //Transition not working
+            if (root.isHealing){
+                patientLayout.state = "normal"
+                healingButton.state = "normal"  //Transition not working
+                healingAnimation.stopHealing()
+                root.isHealing = false
+
+            }
+            else {
+                patientLayout.state = "healing"
+                healingButton.state = "healing"  //Transition not working
+                healingAnimation.startHealing()
+                root.isHealing = true
+            }
         }
     }
+    HealingAnimation {
+        id: healingAnimation
+        anchors.bottom: parent.bottom
+        iconSource: patientLayout.healingSource
+        iconColor: patientLayout.healingIconColor
+    }
 }
-
 

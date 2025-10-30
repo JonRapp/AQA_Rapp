@@ -8,7 +8,7 @@ Rectangle {
     property bool isGenderIconMars: true
     property string healingSource
     property color healingIconColor
-    property int panelHeight: 236 // sum of spacings, button size, text size; automatic value later!!
+    property int panelHeight: 200 // sum of spacings, button size, text size; automatic value later!!
 
     height: panelHeight
 
