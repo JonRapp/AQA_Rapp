@@ -8,33 +8,25 @@ Rectangle {
     required property color iconColor
 
     color: backroundColor
-
-    width: 300
-    height: 300
+    width: 100
+    height: 150
     Timer {
         id: timer
     }
 
     function startHealing(){
         scalingUp.start()
-        timer.interval = 2000
-        timer.repeat = true
-        timer.triggered.connect(scalingDown.start)
-        timer.start()
-
     }
     function stopHealing(){
-        timer.stop()
-        scalingUp.stop()
         scalingDown.start()
     }
 
 
     Image {
         id: healingImage
-        anchors.fill: parent
-        width: 200
-        height: 200
+        //anchors.fill: parent
+        width: 100
+        height: 150
         source: iconSource
     }
     ColorOverlay {
@@ -46,17 +38,14 @@ Rectangle {
         id: scalingUp
         target: root;
         from: 1;
-        to: 1.5;
+        to: 2;
         duration: 1000
     }
     ScaleAnimator {
         id: scalingDown
         target: root;
-        from: 1.5;
+        from: 2;
         to: 1;
         duration: 1000
-        onStopped: {
-            scalingUp.start()
-        }
     }
 }

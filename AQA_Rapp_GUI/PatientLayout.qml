@@ -5,10 +5,11 @@ Rectangle {
     id: root
     required property color buttonBackgroundColor
     required property color buttonIconColor
-    property bool isGenderIconMars: true
-    property string healingSource
+    required property string patientImageSource
+    required property string healingSource
     property color healingIconColor
-    property int panelHeight: 200 // sum of spacings, button size, text size; automatic value later!!
+    property bool isGenderIconMars: true
+    property int panelHeight: 190 // sum of spacings, button size, text size; automatic value later!!
 
     height: panelHeight
 
@@ -62,6 +63,7 @@ Rectangle {
             onClicked: {
                 healingSource = "qrc:/icons/pics/baby-carriage.svg"
                 healingIconColor = "pink"
+                patientImageSource = babyButton.iconSource
             }
         }
         IconButton {
@@ -72,6 +74,7 @@ Rectangle {
             onClicked: {
                 healingSource = "qrc:/icons/pics/futbol.svg"
                 healingIconColor = "lightblue"
+                patientImageSource = childButton.iconSource
             }
         }
         IconButton {
@@ -82,6 +85,7 @@ Rectangle {
             onClicked: {
                 healingSource = "qrc:/icons/pics/lungs.svg"
                 healingIconColor = "gray"
+                patientImageSource = adultButton.iconSource
             }
         }
         IconButton {
@@ -92,6 +96,7 @@ Rectangle {
             onClicked: {
                 healingSource = "qrc:/icons/pics/leaf.svg"
                 healingIconColor = "orange"
+                patientImageSource = oldieButton.iconSource
             }
         }
     }

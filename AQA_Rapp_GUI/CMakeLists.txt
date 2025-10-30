@@ -23,6 +23,7 @@ qt_add_qml_module(appAQA_Rapp_GUI
         QML_FILES PatientLayout.qml
         QML_FILES LabelIconButton.qml
         QML_FILES HealingAnimation.qml
+        QML_FILES AgeGroupIcon.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

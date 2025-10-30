@@ -47,6 +47,7 @@ Window {
         anchors.top: controlLayout.bottom
         buttonBackgroundColor: mainBackgroundColor
         buttonIconColor: mainIconColor
+        patientImageSource: "qrc:/icons/pics/person.svg"
         healingSource: "qrc:/icons/pics/lungs.svg"
         healingIconColor: "gray"
         state: "normal"
@@ -65,6 +66,7 @@ Window {
                 patientLayout.state = "normal"
                 healingButton.state = "normal"  //Transition not working
                 healingAnimation.stopHealing()
+                ageGroupIcon.stopHealing()
                 root.isHealing = false
 
             }
@@ -72,6 +74,7 @@ Window {
                 patientLayout.state = "healing"
                 healingButton.state = "healing"  //Transition not working
                 healingAnimation.startHealing()
+                ageGroupIcon.startHealing()
                 root.isHealing = true
             }
         }
@@ -81,6 +84,17 @@ Window {
         anchors.bottom: parent.bottom
         iconSource: patientLayout.healingSource
         iconColor: patientLayout.healingIconColor
+        backgroundColor: mainBackgroundColor
+    }
+    AgeGroupIcon {
+        id: ageGroupIcon
+        anchors.top: parent.top
+        anchors.right: parent.right
+        anchors.topMargin: 40
+        anchors.rightMargin: 40
+        iconSource: patientLayout.patientImageSource
+        iconColor: mainIconColor
+        backgroundColor: mainBackgroundColor
     }
 }
 
