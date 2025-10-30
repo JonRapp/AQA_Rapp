@@ -23,7 +23,7 @@ Within the time constraints I didn't manage to:
 - finish the animation of the "Healing button"
 
 ## Feedback
-- It's fun to have a little challenge and crafting a UI
+- It's fun to have a little challenge and crafting a GUI
 - The task was clear and the online prototype was well understandable
 
-- the time constraint was the hardest challenge
+- The time constraint was the hardest challenge (but it's nice that the expectations were clarified in the assignment)
