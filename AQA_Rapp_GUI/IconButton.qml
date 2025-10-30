@@ -17,6 +17,7 @@ Button {
         id: buttonRect
         radius: 18
         color: backroundColor
+        border.color: iconColor
 
         Image {
             anchors.verticalCenter: parent.verticalCenter

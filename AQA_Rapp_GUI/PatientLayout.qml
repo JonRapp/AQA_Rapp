@@ -8,10 +8,15 @@ Rectangle {
     property bool isGenderIconMars: true
     property string healingSource
     property color healingIconColor
+    property int panelHeight: 236 // sum of spacings, button size, text size; automatic value later!!
+
+    height: panelHeight
 
     Text {
         id: planetText
         text: qsTr("Favourite planet:")
+        font.pointSize: 12
+        font.family: "Roboto Regular"
         anchors.top: parent.top
     }
     RowLayout {
@@ -40,6 +45,8 @@ Rectangle {
     Text {
         id: ageText
         text: qsTr("Age group:")
+        font.pointSize: 12
+        font.family: "Roboto Regular"
         anchors.top: genderLayout.bottom
         anchors.topMargin: 20
     }
@@ -88,4 +95,30 @@ Rectangle {
             }
         }
     }
+    states: [
+        State {
+            name: "normal"
+            PropertyChanges { target: root; opacity: 100 }
+            PropertyChanges { target: root; height: panelHeight }
+        },
+        State {
+            name: "healing"
+            PropertyChanges { target: root; opacity: 0 }
+            PropertyChanges { target: root; height: 0 }
+        }
+    ]
+    transitions: [
+        Transition {
+            from: "normal"
+            to: "healing"
+            PropertyAnimation { target: root; properties: "opacity"; duration: 1000 }
+            PropertyAnimation { target: root; properties: "height"; duration: 1000 }
+        },
+        Transition {
+            from: "healing"
+            to: "normal"
+            PropertyAnimation { target: root; properties: "opacity"; duration: 1000 }
+            PropertyAnimation { target: root; properties: "height"; duration: 1000 }
+        }
+    ]
 }

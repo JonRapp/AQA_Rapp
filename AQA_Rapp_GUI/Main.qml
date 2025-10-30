@@ -42,9 +42,25 @@ Window {
     // Layout for patient selection which disappears during healing
     PatientLayout {
         id: patientLayout
+        anchors.topMargin: 20
         anchors.top: controlLayout.bottom
         buttonBackgroundColor: mainBackgroundColor
         buttonIconColor: mainIconColor
+        state: "normal"
+    }
+    LabelIconButton {
+        id: healingButton
+        anchors.topMargin: 20
+        anchors.top: patientLayout.bottom
+        iconSource: "qrc:/icons/pics/play.svg"
+        backroundColor: mainBackgroundColor
+        iconColor: mainIconColor
+        labelText: "Start healing"
+        state: "normal"
+        onClicked: {
+            patientLayout.state = "healing"
+            healingButton.state = "healing"  //Transition not working
+        }
     }
 }
 
