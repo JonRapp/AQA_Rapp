@@ -24,7 +24,8 @@ Rectangle {
 
     Image {
         id: healingImage
-        //anchors.fill: parent
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
         width: 100
         height: 150
         source: iconSource
