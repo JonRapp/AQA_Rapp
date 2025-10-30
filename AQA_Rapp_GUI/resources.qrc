@@ -1,1 +1,20 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/icons">
+        <file>pics/baby.svg</file>
+        <file>pics/baby-carriage.svg</file>
+        <file>pics/child.svg</file>
+        <file>pics/child-dress.svg</file>
+        <file>pics/circle-half-stroke.svg</file>
+        <file>pics/futbol.svg</file>
+        <file>pics/hand.svg</file>
+        <file>pics/leaf.svg</file>
+        <file>pics/lungs.svg</file>
+        <file>pics/mars.svg</file>
+        <file>pics/person.svg</file>
+        <file>pics/person-cane.svg</file>
+        <file>pics/person-dress.svg</file>
+        <file>pics/play.svg</file>
+        <file>pics/power-off.svg</file>
+        <file>pics/venus.svg</file>
+    </qresource>
+</RCC>

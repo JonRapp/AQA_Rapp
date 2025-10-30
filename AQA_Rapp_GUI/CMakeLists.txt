@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(AQA_Rapp_GUI VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
@@ -18,6 +19,9 @@ qt_add_qml_module(appAQA_Rapp_GUI
     QML_FILES
         Main.qml
         RESOURCES resources.qrc
+        QML_FILES IconButton.qml
+        QML_FILES PatientLayout.qml
+        QML_FILES LabelIconButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
